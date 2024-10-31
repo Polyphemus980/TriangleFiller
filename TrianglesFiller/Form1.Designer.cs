@@ -40,6 +40,9 @@
             betaTrackBar = new TrackBar();
             alphaTrackBar = new TrackBar();
             groupBox2 = new GroupBox();
+            ZValueLabel = new Label();
+            ZTrackBar = new TrackBar();
+            label3 = new Label();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
@@ -50,12 +53,14 @@
             mTrackBar = new TrackBar();
             ksTrackBar = new TrackBar();
             colorButton = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)betaTrackBar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)alphaTrackBar).BeginInit();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ZTrackBar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)kdTrackBar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)mTrackBar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ksTrackBar).BeginInit();
@@ -71,6 +76,7 @@
             drawingPanel.Size = new Size(647, 527);
             drawingPanel.TabIndex = 0;
             drawingPanel.Paint += drawingPanel_Paint;
+            drawingPanel.Resize += drawingPanel_Resize;
             // 
             // tableLayoutPanel1
             // 
@@ -120,7 +126,6 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Angles";
-            groupBox1.Enter += groupBox1_Enter;
             // 
             // alphaValueLabel
             // 
@@ -189,6 +194,9 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(ZValueLabel);
+            groupBox2.Controls.Add(ZTrackBar);
+            groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label7);
@@ -206,6 +214,35 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Coefficients";
             // 
+            // ZValueLabel
+            // 
+            ZValueLabel.AutoSize = true;
+            ZValueLabel.Location = new Point(270, 110);
+            ZValueLabel.Name = "ZValueLabel";
+            ZValueLabel.Size = new Size(33, 20);
+            ZValueLabel.TabIndex = 16;
+            ZValueLabel.Text = "100";
+            // 
+            // ZTrackBar
+            // 
+            ZTrackBar.Location = new Point(181, 133);
+            ZTrackBar.Maximum = 250;
+            ZTrackBar.Minimum = 50;
+            ZTrackBar.Name = "ZTrackBar";
+            ZTrackBar.Size = new Size(130, 56);
+            ZTrackBar.TabIndex = 15;
+            ZTrackBar.Value = 100;
+            ZTrackBar.Scroll += ZTrackBar_Scroll;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(184, 110);
+            label3.Name = "label3";
+            label3.Size = new Size(69, 20);
+            label3.TabIndex = 14;
+            label3.Text = "source Z";
+            // 
             // label9
             // 
             label9.AutoSize = true;
@@ -220,9 +257,9 @@
             label8.AutoSize = true;
             label8.Location = new Point(6, 28);
             label8.Name = "label8";
-            label8.Size = new Size(25, 20);
+            label8.Size = new Size(22, 20);
             label8.TabIndex = 11;
-            label8.Text = "kd";
+            label8.Text = "ks";
             // 
             // label7
             // 
@@ -250,7 +287,6 @@
             kdValueLabel.Size = new Size(28, 20);
             kdValueLabel.TabIndex = 8;
             kdValueLabel.Text = "0.5";
-            kdValueLabel.Click += label5_Click;
             // 
             // ksValueLabel
             // 
@@ -321,6 +357,7 @@
             ((System.ComponentModel.ISupportInitialize)alphaTrackBar).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ZTrackBar).EndInit();
             ((System.ComponentModel.ISupportInitialize)kdTrackBar).EndInit();
             ((System.ComponentModel.ISupportInitialize)mTrackBar).EndInit();
             ((System.ComponentModel.ISupportInitialize)ksTrackBar).EndInit();
@@ -351,5 +388,9 @@
         private Label label8;
         private Label label7;
         private Button colorButton;
+        private TrackBar ZTrackBar;
+        private Label label3;
+        private Label ZValueLabel;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
