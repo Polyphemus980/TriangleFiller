@@ -20,8 +20,16 @@ namespace TrianglesFiller
                     //    points2D[i] = new PointF(t.vertices[i].postRotationPosition.X, t.vertices[i].postRotationPosition.Y);
                     //}
                     //e.Graphics.DrawPolygon(new Pen(Color.Red), points2D);
-                    //Random rnd = new Random();
                     FillTriangle(g, t, calculateFillingColor(t));//fillingColor);
+                    SolidBrush b = new SolidBrush(calculateFillingColor(t));
+                    var points2D = new PointF[3];
+                    for (int i = 0; i < 3; i++)
+                    {
+                        points2D[i] = new PointF(t.vertices[i].postRotationPosition.X, t.vertices[i].postRotationPosition.Y);
+                    }
+                    //g.DrawPolygon(new Pen(Color.Red), points2D);
+                    //g.FillPolygon(b, points2D); //g.DrawPolygon(new Pen(Color.Red), points2D);
+
                     //e.Graphics.DrawPolygon(new Pen(Color.Red), points2D);
                     //for (int i = 0; i < 3; i++)
                     //{
@@ -100,16 +108,13 @@ namespace TrianglesFiller
             for (int i = 0; i < t.vertices.Length; i++)
             {
                 Edge e = new Edge(t.vertices[i].postRotationPosition, t.vertices[(i + 1) % t.vertices.Length].postRotationPosition);
-                if (e.yMin != e.yMax)
-                {
-                    edges.Add(e);
-                    yMin = Math.Min(yMin, (int)e.yMin);
-                    yMax = Math.Max(yMax, (int)e.yMax);
-                }
+                edges.Add(e);
+                yMin = Math.Min(yMin, (int)(e.yMin));
+                yMax = Math.Max(yMax, (int)e.yMax);
             }
 
             List<Edge> activeEdges = new List<Edge>();
-            for (int y = yMin; y < yMax; y++)
+            for (int y = yMin; y <= yMax; y++)
             {
                 activeEdges.Clear();
                 foreach (var edge in edges)
@@ -132,7 +137,7 @@ namespace TrianglesFiller
                     int xStart = (int)Math.Ceiling(e1.currentX);
                     int xEnd = (int)Math.Ceiling(e2.currentX);
 
-                    for (int x = xStart; x < xEnd; x++)
+                    for (int x = xStart; x <= xEnd; x++)
                     {
                         g.FillRectangle(new SolidBrush(c), x, y, 1, 1);
                     }

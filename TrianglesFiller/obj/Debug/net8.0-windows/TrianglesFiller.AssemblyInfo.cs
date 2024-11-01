@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrianglesFiller")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca9e12253a78766d0df6f361ff3a88d6a2b3e681")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3801b2775bb1f1ea44e40fc315d933a96c2a05c4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrianglesFiller")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrianglesFiller")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
