@@ -31,6 +31,14 @@
             drawingPanel = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
+            groupBox3 = new GroupBox();
+            checkBox1 = new CheckBox();
+            fillRadio = new RadioButton();
+            meshRadio = new RadioButton();
+            sampleCountLabel = new Label();
+            label5 = new Label();
+            sampleSizeTrackBar = new TrackBar();
+            colorButton = new Button();
             groupBox1 = new GroupBox();
             alphaValueLabel = new Label();
             label4 = new Label();
@@ -52,10 +60,11 @@
             kdTrackBar = new TrackBar();
             mTrackBar = new TrackBar();
             ksTrackBar = new TrackBar();
-            colorButton = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)sampleSizeTrackBar).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)betaTrackBar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)alphaTrackBar).BeginInit();
@@ -97,9 +106,9 @@
             // 
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Controls.Add(groupBox3, 0, 2);
             tableLayoutPanel2.Controls.Add(groupBox1, 0, 0);
             tableLayoutPanel2.Controls.Add(groupBox2, 0, 1);
-            tableLayoutPanel2.Controls.Add(colorButton, 0, 2);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(656, 3);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -109,6 +118,100 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Size = new Size(332, 527);
             tableLayoutPanel2.TabIndex = 1;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(checkBox1);
+            groupBox3.Controls.Add(fillRadio);
+            groupBox3.Controls.Add(meshRadio);
+            groupBox3.Controls.Add(sampleCountLabel);
+            groupBox3.Controls.Add(label5);
+            groupBox3.Controls.Add(sampleSizeTrackBar);
+            groupBox3.Controls.Add(colorButton);
+            groupBox3.Dock = DockStyle.Fill;
+            groupBox3.Location = new Point(3, 350);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(326, 174);
+            groupBox3.TabIndex = 3;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Other";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Checked = true;
+            checkBox1.CheckState = CheckState.Checked;
+            checkBox1.Location = new Point(161, 69);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(162, 24);
+            checkBox1.TabIndex = 20;
+            checkBox1.Text = "Moving light source";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // fillRadio
+            // 
+            fillRadio.AutoSize = true;
+            fillRadio.Checked = true;
+            fillRadio.Location = new Point(6, 91);
+            fillRadio.Name = "fillRadio";
+            fillRadio.Size = new Size(139, 24);
+            fillRadio.TabIndex = 19;
+            fillRadio.TabStop = true;
+            fillRadio.Text = "Draw filling only";
+            fillRadio.UseVisualStyleBackColor = true;
+            fillRadio.CheckedChanged += fillRadio_CheckedChanged;
+            // 
+            // meshRadio
+            // 
+            meshRadio.AutoSize = true;
+            meshRadio.Location = new Point(6, 61);
+            meshRadio.Name = "meshRadio";
+            meshRadio.Size = new Size(136, 24);
+            meshRadio.TabIndex = 18;
+            meshRadio.Text = "Draw mesh only";
+            meshRadio.UseVisualStyleBackColor = true;
+            meshRadio.CheckedChanged += meshRadio_CheckedChanged;
+            // 
+            // sampleCountLabel
+            // 
+            sampleCountLabel.AutoSize = true;
+            sampleCountLabel.Location = new Point(286, 14);
+            sampleCountLabel.Name = "sampleCountLabel";
+            sampleCountLabel.Size = new Size(25, 20);
+            sampleCountLabel.TabIndex = 17;
+            sampleCountLabel.Text = "20";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(161, 14);
+            label5.Name = "label5";
+            label5.Size = new Size(88, 20);
+            label5.TabIndex = 15;
+            label5.Text = "Sample size";
+            // 
+            // sampleSizeTrackBar
+            // 
+            sampleSizeTrackBar.Location = new Point(161, 37);
+            sampleSizeTrackBar.Maximum = 30;
+            sampleSizeTrackBar.Minimum = 5;
+            sampleSizeTrackBar.Name = "sampleSizeTrackBar";
+            sampleSizeTrackBar.Size = new Size(150, 56);
+            sampleSizeTrackBar.TabIndex = 3;
+            sampleSizeTrackBar.TickFrequency = 5;
+            sampleSizeTrackBar.Value = 20;
+            sampleSizeTrackBar.Scroll += sampleSizeTrackBar_Scroll;
+            // 
+            // colorButton
+            // 
+            colorButton.Location = new Point(6, 26);
+            colorButton.Name = "colorButton";
+            colorButton.Size = new Size(99, 29);
+            colorButton.TabIndex = 2;
+            colorButton.Text = "Select color";
+            colorButton.UseVisualStyleBackColor = true;
+            colorButton.Click += colorButton_Click;
             // 
             // groupBox1
             // 
@@ -237,9 +340,9 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(184, 110);
+            label3.Location = new Point(181, 110);
             label3.Name = "label3";
-            label3.Size = new Size(69, 20);
+            label3.Size = new Size(65, 20);
             label3.TabIndex = 14;
             label3.Text = "source Z";
             // 
@@ -331,16 +434,6 @@
             ksTrackBar.Value = 50;
             ksTrackBar.Scroll += ksTrackBar_Scroll;
             // 
-            // colorButton
-            // 
-            colorButton.Location = new Point(3, 350);
-            colorButton.Name = "colorButton";
-            colorButton.Size = new Size(99, 29);
-            colorButton.TabIndex = 2;
-            colorButton.Text = "Select color";
-            colorButton.UseVisualStyleBackColor = true;
-            colorButton.Click += colorButton_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -351,6 +444,9 @@
             Text = "Form1";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)sampleSizeTrackBar).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)betaTrackBar).EndInit();
@@ -392,5 +488,12 @@
         private Label label3;
         private Label ZValueLabel;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private GroupBox groupBox3;
+        private Label sampleCountLabel;
+        private Label label5;
+        private TrackBar sampleSizeTrackBar;
+        private RadioButton fillRadio;
+        private RadioButton meshRadio;
+        private CheckBox checkBox1;
     }
 }

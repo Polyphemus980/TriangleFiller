@@ -8,6 +8,11 @@ namespace TrianglesFiller
 {
     public partial class Form1 : Form
     {
+        public enum drawingMode
+        {
+            MeshOnly,
+            FillOnly
+        }
         private void mTrackBar_Scroll(object sender, EventArgs e)
         {
             m = mTrackBar.Value;
@@ -48,6 +53,32 @@ namespace TrianglesFiller
             lightingSourceZ = ZTrackBar.Value;
             ZValueLabel.Text = ZTrackBar.Value.ToString();
             drawingPanel.Invalidate();
+        }
+
+        private void sampleSizeTrackBar_Scroll(object sender, EventArgs e)
+        {
+            sampleCount = sampleSizeTrackBar.Value;
+            sampleCountLabel.Text = sampleCount.ToString();
+            RecalculatePoints();
+            drawingPanel.Invalidate();
+        }
+
+        private void fillRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (fillRadio.Checked)
+            {
+                dMode = drawingMode.FillOnly;
+                drawingPanel.Invalidate();
+            }
+        }
+
+        private void meshRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (meshRadio.Checked)
+            {
+                dMode = drawingMode.MeshOnly;
+                drawingPanel.Invalidate();
+            }
         }
     }
 }

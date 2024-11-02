@@ -9,38 +9,31 @@ namespace TrianglesFiller
             Graphics g = e.Graphics;
             g.ScaleTransform(1, -1);
             g.TranslateTransform(drawingPanel.Width / 2, -drawingPanel.Height / 2);
-            g.DrawEllipse(Pens.LightBlue, lightingSourceX, lightingSourceY, 10, 10);
+            SolidBrush brush = new SolidBrush(fillingColor);
+            g.FillEllipse(brush, lightingSourceX, lightingSourceY, 10, 10);
             if (triangles != null)
             {
                 foreach (Triangle t in triangles)
                 {
-                    //var points2D = new PointF[3];
-                    //for (int i = 0; i < 3; i++)
-                    //{
-                    //    points2D[i] = new PointF(t.vertices[i].postRotationPosition.X, t.vertices[i].postRotationPosition.Y);
-                    //}
-                    //e.Graphics.DrawPolygon(new Pen(Color.Red), points2D);
-                    FillTriangle(g, t, calculateFillingColor(t));//fillingColor);
-                    SolidBrush b = new SolidBrush(calculateFillingColor(t));
-                    var points2D = new PointF[3];
-                    for (int i = 0; i < 3; i++)
+                    if (dMode == drawingMode.FillOnly)
                     {
-                        points2D[i] = new PointF(t.vertices[i].postRotationPosition.X, t.vertices[i].postRotationPosition.Y);
+                        FillTriangle(g, t, calculateFillingColor(t));
                     }
-                    //g.DrawPolygon(new Pen(Color.Red), points2D);
-                    //g.FillPolygon(b, points2D); //g.DrawPolygon(new Pen(Color.Red), points2D);
-
-                    //e.Graphics.DrawPolygon(new Pen(Color.Red), points2D);
-                    //for (int i = 0; i < 3; i++)
-                    //{
-                    //    points2D[i] = new PointF(t.vertices[i].postRotationPosition.X, t.vertices[i].postRotationPosition.Y);
-                    //    e.Graphics.FillEllipse(Brushes.Gainsboro, t.vertices[i].postRotationPosition.X, t.vertices[i].postRotationPosition.Y, 5, 5);
-                    //}
+                    else
+                    {
+                        SolidBrush b = new SolidBrush(calculateFillingColor(t));
+                        var points2D = new PointF[3];
+                        for (int i = 0; i < 3; i++)
+                        {
+                            points2D[i] = new PointF(t.vertices[i].postRotationPosition.X, t.vertices[i].postRotationPosition.Y);
+                        }
+                        g.DrawPolygon(new Pen(Color.Red), points2D);
+                        foreach (Vector3 v in loadedPoints)
+                        {
+                            g.FillEllipse(Brushes.Yellow, v.X, v.Y, 5, 5);
+                        }
+                    }
                 }
-                //foreach (Vector3 v in loadedPoints)
-                //{
-                //    e.Graphics.FillEllipse(Brushes.Yellow, v.X, v.Y, 5, 5);
-                //}
             }
         }
         public Color calculateFillingColor(Triangle t)
@@ -137,7 +130,7 @@ namespace TrianglesFiller
                     int xStart = (int)Math.Ceiling(e1.currentX);
                     int xEnd = (int)Math.Ceiling(e2.currentX);
 
-                    for (int x = xStart; x <= xEnd; x++)
+                    for (int x = xStart; x < xEnd; x++)
                     {
                         g.FillRectangle(new SolidBrush(c), x, y, 1, 1);
                     }

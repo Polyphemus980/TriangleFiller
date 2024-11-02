@@ -6,6 +6,13 @@ namespace TrianglesFiller
     public partial class Form1: Form
     {
 
+        public void RecalculatePoints()
+        {
+            points = new Vertex[sampleCount, sampleCount];
+            SamplePoints();
+            RotateAxis();
+            TriangulatePoints();
+        }
         public Vertex GetPoint(float u, float v)
         {
             Vector3 point = new Vector3(0, 0, 0);

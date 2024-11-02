@@ -22,7 +22,7 @@ namespace TrianglesFiller
         public double radians = 0;
         public float lightingSourceX = 0;
         public float lightingSourceY = 0;
-
+        public drawingMode dMode = drawingMode.FillOnly;
         public Vector3 lightingVector => new Vector3(lightingSourceX, lightingSourceY, lightingSourceZ);
         System.Windows.Forms.Timer updateLightingTimer;
         public Color fillingColor = Color.FromArgb(128, 30, 200);
@@ -37,7 +37,7 @@ namespace TrianglesFiller
                new object[] { true }
            );
             updateLightingTimer = new System.Windows.Forms.Timer();
-            updateLightingTimer.Interval = 100;
+            updateLightingTimer.Interval = 50;
             updateLightingTimer.Tick += UpdateLightingTimer_Tick;
             triangles = new List<Triangle>();
             LoadPoints();
@@ -56,10 +56,15 @@ namespace TrianglesFiller
             lightingSourceY = (float)(radius * Math.Sin(radians));
             drawingPanel.Invalidate();
         }
-        
+
         private void drawingPanel_Resize(object sender, EventArgs e)
         {
             drawingPanel.Invalidate();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            updateLightingTimer.Enabled = checkBox1.Checked;
         }
     }
 }
