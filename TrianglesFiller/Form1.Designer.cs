@@ -32,6 +32,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             groupBox3 = new GroupBox();
+            button1 = new Button();
             checkBox1 = new CheckBox();
             fillRadio = new RadioButton();
             meshRadio = new RadioButton();
@@ -61,6 +62,7 @@
             mTrackBar = new TrackBar();
             ksTrackBar = new TrackBar();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            checkBox2 = new CheckBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -121,6 +123,8 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(checkBox2);
+            groupBox3.Controls.Add(button1);
             groupBox3.Controls.Add(checkBox1);
             groupBox3.Controls.Add(fillRadio);
             groupBox3.Controls.Add(meshRadio);
@@ -135,6 +139,16 @@
             groupBox3.TabIndex = 3;
             groupBox3.TabStop = false;
             groupBox3.Text = "Other";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(6, 121);
+            button1.Name = "button1";
+            button1.Size = new Size(99, 35);
+            button1.TabIndex = 21;
+            button1.Text = "Load map";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // checkBox1
             // 
@@ -434,6 +448,17 @@
             ksTrackBar.Value = 50;
             ksTrackBar.Scroll += ksTrackBar_Scroll;
             // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(161, 99);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(140, 24);
+            checkBox2.TabIndex = 22;
+            checkBox2.Text = "Use normal map";
+            checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -495,5 +520,7 @@
         private RadioButton fillRadio;
         private RadioButton meshRadio;
         private CheckBox checkBox1;
+        private Button button1;
+        private CheckBox checkBox2;
     }
 }

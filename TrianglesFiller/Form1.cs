@@ -66,5 +66,20 @@ namespace TrianglesFiller
         {
             updateLightingTimer.Enabled = checkBox1.Checked;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                string path = openFile.FileName;
+                normalBitmap = new Bitmap(path);
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            normalMap = checkBox2.Checked;
+        }
     }
 }

@@ -46,7 +46,6 @@ namespace TrianglesFiller
                     points[i, j].ApplyRotation(rotationMatrix);
                 }
             }
-            TriangulatePoints();
         }
         private void TriangulatePoints()
         {
@@ -116,7 +115,7 @@ namespace TrianglesFiller
             string path = Path.Combine(Application.StartupPath, "Points.txt");
             if (!File.Exists(path))
             {
-                MessageBox.Show("Must have a points.txt file");
+                MessageBox.Show("Must have a Points.txt file");
                 Application.Exit();
             }
             using (StreamReader sr = new StreamReader(path))
