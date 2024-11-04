@@ -9,6 +9,8 @@ namespace TrianglesFiller
 {
     public class Vertex
     {
+        public float u;
+        public float v;
         private Vector3 position { get; set; }
         private Vector3 normal { get; set; }
         private Vector3 tangentU { get; set; }
@@ -21,10 +23,12 @@ namespace TrianglesFiller
 
         public Vector3 postRotationPosition { get; set; }
 
-        public Vertex(Vector3 position,Vector3 tangentU,Vector3 tangentV)
+        public Vertex(Vector3 position,Vector3 tangentU,Vector3 tangentV,float u,float v)
         {
+            this.u = u;
+            this.v = v;
             this.position = position;
-            this.normal = Vector3.Cross(tangentU,tangentV);
+            normal = Vector3.Cross(tangentU,tangentV);
             this.tangentU = tangentU;
             this.tangentV = tangentV;
             postRotationPosition = position;

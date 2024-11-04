@@ -32,6 +32,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             groupBox3 = new GroupBox();
+            checkBox2 = new CheckBox();
             button1 = new Button();
             checkBox1 = new CheckBox();
             fillRadio = new RadioButton();
@@ -62,7 +63,7 @@
             mTrackBar = new TrackBar();
             ksTrackBar = new TrackBar();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            checkBox2 = new CheckBox();
+            button2 = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -84,7 +85,7 @@
             drawingPanel.Dock = DockStyle.Fill;
             drawingPanel.Location = new Point(3, 3);
             drawingPanel.Name = "drawingPanel";
-            drawingPanel.Size = new Size(647, 527);
+            drawingPanel.Size = new Size(647, 571);
             drawingPanel.TabIndex = 0;
             drawingPanel.Paint += drawingPanel_Paint;
             drawingPanel.Resize += drawingPanel_Resize;
@@ -101,7 +102,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(991, 533);
+            tableLayoutPanel1.Size = new Size(991, 577);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -118,11 +119,12 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 127F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 220F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(332, 527);
+            tableLayoutPanel2.Size = new Size(332, 571);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(button2);
             groupBox3.Controls.Add(checkBox2);
             groupBox3.Controls.Add(button1);
             groupBox3.Controls.Add(checkBox1);
@@ -135,10 +137,21 @@
             groupBox3.Dock = DockStyle.Fill;
             groupBox3.Location = new Point(3, 350);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(326, 174);
+            groupBox3.Size = new Size(326, 218);
             groupBox3.TabIndex = 3;
             groupBox3.TabStop = false;
             groupBox3.Text = "Other";
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(161, 99);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(140, 24);
+            checkBox2.TabIndex = 22;
+            checkBox2.Text = "Use normal map";
+            checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // button1
             // 
@@ -208,7 +221,7 @@
             // sampleSizeTrackBar
             // 
             sampleSizeTrackBar.Location = new Point(161, 37);
-            sampleSizeTrackBar.Maximum = 30;
+            sampleSizeTrackBar.Maximum = 200;
             sampleSizeTrackBar.Minimum = 5;
             sampleSizeTrackBar.Name = "sampleSizeTrackBar";
             sampleSizeTrackBar.Size = new Size(150, 56);
@@ -221,9 +234,9 @@
             // 
             colorButton.Location = new Point(6, 26);
             colorButton.Name = "colorButton";
-            colorButton.Size = new Size(99, 29);
+            colorButton.Size = new Size(147, 29);
             colorButton.TabIndex = 2;
-            colorButton.Text = "Select color";
+            colorButton.Text = "Select object color";
             colorButton.UseVisualStyleBackColor = true;
             colorButton.Click += colorButton_Click;
             // 
@@ -338,17 +351,17 @@
             ZValueLabel.Name = "ZValueLabel";
             ZValueLabel.Size = new Size(33, 20);
             ZValueLabel.TabIndex = 16;
-            ZValueLabel.Text = "100";
+            ZValueLabel.Text = "250";
             // 
             // ZTrackBar
             // 
             ZTrackBar.Location = new Point(181, 133);
-            ZTrackBar.Maximum = 250;
+            ZTrackBar.Maximum = 500;
             ZTrackBar.Minimum = 50;
             ZTrackBar.Name = "ZTrackBar";
             ZTrackBar.Size = new Size(130, 56);
             ZTrackBar.TabIndex = 15;
-            ZTrackBar.Value = 100;
+            ZTrackBar.Value = 250;
             ZTrackBar.Scroll += ZTrackBar_Scroll;
             // 
             // label3
@@ -448,22 +461,21 @@
             ksTrackBar.Value = 50;
             ksTrackBar.Scroll += ksTrackBar_Scroll;
             // 
-            // checkBox2
+            // button2
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(161, 99);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(140, 24);
-            checkBox2.TabIndex = 22;
-            checkBox2.Text = "Use normal map";
-            checkBox2.UseVisualStyleBackColor = true;
-            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
+            button2.Location = new Point(161, 129);
+            button2.Name = "button2";
+            button2.Size = new Size(140, 29);
+            button2.TabIndex = 23;
+            button2.Text = "Select light color";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(991, 533);
+            ClientSize = new Size(991, 577);
             Controls.Add(tableLayoutPanel1);
             Name = "Form1";
             Text = "Form1";
@@ -522,5 +534,6 @@
         private CheckBox checkBox1;
         private Button button1;
         private CheckBox checkBox2;
+        private Button button2;
     }
 }

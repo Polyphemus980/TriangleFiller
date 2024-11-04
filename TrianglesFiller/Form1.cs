@@ -18,12 +18,13 @@ namespace TrianglesFiller
         public float kd = 0.5f;
         public int m = 50;
         public float lightingSourceZ = 100;
-        public int radius = 400;
+        public int radius = 200;
         public double radians = 0;
         public float lightingSourceX = 0;
         public float lightingSourceY = 0;
+        public bool lightingExpanding = true;
         public drawingMode dMode = drawingMode.FillOnly;
-        public Vector3 lightingVector => new Vector3(lightingSourceX, lightingSourceY, lightingSourceZ);
+        public Vector3 lightingPosition => new Vector3(lightingSourceX, lightingSourceY, lightingSourceZ);
         System.Windows.Forms.Timer updateLightingTimer;
         public Color fillingColor = Color.FromArgb(128, 30, 200);
         public Form1()
@@ -52,6 +53,18 @@ namespace TrianglesFiller
         private void UpdateLightingTimer_Tick(object? sender, EventArgs e)
         {
             radians += Math.PI / 100;
+            if (lightingExpanding)
+            {
+                radius += 1;
+                if (radius > 500)
+                    lightingExpanding = false;
+            }
+            else
+            {
+                radius -= 1;
+                if (radius < 200)
+                    lightingExpanding = true;
+            }
             lightingSourceX = (float)(radius * Math.Cos(radians));
             lightingSourceY = (float)(radius * Math.Sin(radians));
             drawingPanel.Invalidate();
@@ -80,6 +93,19 @@ namespace TrianglesFiller
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             normalMap = checkBox2.Checked;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ColorDialog g = new ColorDialog();
+            if (g.ShowDialog() == DialogResult.OK)
+            {
+                lightColor.r = g.Color.R * 1f / 255;
+                lightColor.g = g.Color.G * 1f / 255;
+                lightColor.b = g.Color.B * 1f / 255;
+                button2.BackColor = g.Color;
+                drawingPanel.Invalidate();
+            }
         }
     }
 }

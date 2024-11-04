@@ -5,7 +5,7 @@ namespace TrianglesFiller
 {
     public partial class Form1: Form
     {
-
+        const int pointsLength = 4;
         public void RecalculatePoints()
         {
             points = new Vertex[sampleCount, sampleCount];
@@ -15,23 +15,56 @@ namespace TrianglesFiller
         }
         public Vertex GetPoint(float u, float v)
         {
+            //Vector3 point = new Vector3(0, 0, 0);
+            //Vector3 tangentU = new Vector3(0, 0, 0);
+            //Vector3 tangentV = new Vector3(0, 0, 0);
+            //for (int i = 0; i < pointsLength; i++)
+            //{
+            //    for (int j = 0; j < pointsLength; j++)
+            //    {
+            //        float BernsteinU = calculateBernstein(pointsLength - 1, i, u);
+            //        float BernsteinDerivativeU = calculateDerivativeBernstein(i, u);
+            //        float BernsteinDerivateV = calculateDerivativeBernstein(j, v);
+            //        float BernsteinV = calculateBernstein(pointsLength - 1, j, v);
+            //        point += BernsteinU * BernsteinV * loadedPoints[pointsLength * i + j];
+            //        tangentU += BernsteinDerivativeU * BernsteinV * loadedPoints[pointsLength * i + j];
+            //        tangentV += BernsteinDerivateV * BernsteinU * loadedPoints[pointsLength * i + j];
+            //    }
+            //}
+            //return new Vertex(point, Vector3.Normalize(4 * tangentU), Vector3.Normalize(4 * tangentV),u,v
             Vector3 point = new Vector3(0, 0, 0);
             Vector3 tangentU = new Vector3(0, 0, 0);
             Vector3 tangentV = new Vector3(0, 0, 0);
-            for (int i = 0; i < 4; i++)
+
+            // Precompute Bernstein polynomials and derivatives for u and v
+            float[] bernsteinU = new float[pointsLength];
+            float[] bernsteinDerivativeU = new float[pointsLength];
+            float[] bernsteinV = new float[pointsLength];
+            float[] bernsteinDerivativeV = new float[pointsLength];
+
+            for (int i = 0; i < pointsLength; i++)
             {
-                for (int j = 0; j < 4; j++)
+                bernsteinU[i] = calculateBernstein(pointsLength - 1, i, u);
+                bernsteinDerivativeU[i] = calculateDerivativeBernstein(i, u);
+                bernsteinV[i] = calculateBernstein(pointsLength - 1, i, v);
+                bernsteinDerivativeV[i] = calculateDerivativeBernstein(i, v);
+            }
+
+            // Calculate point and tangents
+            for (int i = 0; i < pointsLength; i++)
+            {
+                for (int j = 0; j < pointsLength; j++)
                 {
-                    float BernsteinU = calculateBernstein(3, i, u);
-                    float BernsteinDerivativeU = calculateDerivativeBernstein(i, u);
-                    float BernsteinDerivateV = calculateDerivativeBernstein(j, v);
-                    float BernsteinV = calculateBernstein(3, j, v);
-                    point += BernsteinU * BernsteinV * loadedPoints[4 * i + j];
-                    tangentU += BernsteinDerivativeU * BernsteinV * loadedPoints[4 * i + j];
-                    tangentV += BernsteinDerivateV * BernsteinU * loadedPoints[4 * i + j];
+                    Vector3 loadedPoint = loadedPoints[pointsLength * i + j];
+
+                    point += bernsteinU[i] * bernsteinV[j] * loadedPoint;
+                    tangentU += bernsteinDerivativeU[i] * bernsteinV[j] * loadedPoint;
+                    tangentV += bernsteinDerivativeV[j] * bernsteinU[i] * loadedPoint;
                 }
             }
-            return new Vertex(point, Vector3.Normalize(tangentU), Vector3.Normalize(tangentV));
+
+            // Normalize and scale tangents before returning
+            return new Vertex(point, Vector3.Normalize(4 * tangentU), Vector3.Normalize(4 * tangentV), u, v);
         }
 
         private void RotateAxis()
@@ -83,19 +116,30 @@ namespace TrianglesFiller
 
         private int calculateBinomialCoefficient(int n, int k)
         {
-            int[,] C = new int[n + 1, k + 1];
-            int i, j;
-            for (i = 0; i <= n; i++)
-            {
-                for (j = 0; j <= Math.Min(i, k); j++)
-                {
-                    if (j == 0 || j == i)
-                        C[i, j] = 1;
-                    else
-                        C[i, j] = C[i - 1, j - 1] + C[i - 1, j];
-                }
-            }
-            return C[n, k];
+            //int[,] C = new int[n + 1, k + 1];
+            //int i, j;
+            //for (i = 0; i <= n; i++)
+            //{
+            //    for (j = 0; j <= Math.Min(i, k); j++)
+            //    {
+            //        if (j == 0 || j == i)
+            //            C[i, j] = 1;
+            //        else
+            //            C[i, j] = C[i - 1, j - 1] + C[i - 1, j];
+            //    }
+            //}
+            //return C[n, k];
+
+        int[][] binomialCoefficients =
+    {
+        new int[] {1},
+        new int[] {1, 1},
+        new int[] {1, 2, 1},
+        new int[] {1, 3, 3, 1}
+            };
+
+            return binomialCoefficients[n][k];
+
         }
 
         private float calculateDerivativeBernstein(int index, float t)
