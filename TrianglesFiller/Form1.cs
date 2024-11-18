@@ -17,26 +17,28 @@ namespace TrianglesFiller
         public float ks = 0.5f;
         public float kd = 0.5f;
         public int m = 50;
-        public float lightingSourceZ = 100;
-        public int radius = 200;
+        public float lightingSourceZ = 250;
+        public int radius = 300;
         public double radians = 0;
         public float lightingSourceX = 0;
         public float lightingSourceY = 0;
         public bool lightingExpanding = true;
         public drawingMode dMode = drawingMode.FillOnly;
-        public Vector3 lightingPosition => new Vector3(lightingSourceX, lightingSourceY, lightingSourceZ);
+        public Vector3 lightingPosition =>
+            new Vector3(lightingSourceX, lightingSourceY, lightingSourceZ);
         System.Windows.Forms.Timer updateLightingTimer;
         public Color fillingColor = Color.FromArgb(128, 30, 200);
+
         public Form1()
         {
             InitializeComponent();
             typeof(Panel).InvokeMember(
-               "DoubleBuffered",
-               BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
-               null,
-               drawingPanel,
-               new object[] { true }
-           );
+                "DoubleBuffered",
+                BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
+                null,
+                drawingPanel,
+                new object[] { true }
+            );
             updateLightingTimer = new System.Windows.Forms.Timer();
             updateLightingTimer.Interval = 50;
             updateLightingTimer.Tick += UpdateLightingTimer_Tick;
@@ -53,20 +55,8 @@ namespace TrianglesFiller
         private void UpdateLightingTimer_Tick(object? sender, EventArgs e)
         {
             radians += Math.PI / 100;
-            if (lightingExpanding)
-            {
-                radius += 1;
-                if (radius > 500)
-                    lightingExpanding = false;
-            }
-            else
-            {
-                radius -= 1;
-                if (radius < 200)
-                    lightingExpanding = true;
-            }
-            lightingSourceX = (float)(radius * Math.Cos(radians));
-            lightingSourceY = (float)(radius * Math.Sin(radians));
+            lightingSourceX = (float)(radius * Math.Sin(radians));
+            lightingSourceY = (float)(radius * Math.Cos(radians));
             drawingPanel.Invalidate();
         }
 
@@ -82,7 +72,11 @@ namespace TrianglesFiller
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
+            OpenFileDialog openFile = new OpenFileDialog
+            {
+                Filter = "Image Files|*.bmp;*.jpg;*.jpeg;*.png;*.gif;*.tiff;*.jfif",
+                Title = "Select texture file",
+            };
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 string path = openFile.FileName;
@@ -92,19 +86,21 @@ namespace TrianglesFiller
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            normalMap = checkBox2.Checked;
+            if (normalBitmap != null)
+                normalMap = checkBox2.Checked;
+            else
+            {
+                checkBox2.Checked = false;
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            ColorDialog g = new ColorDialog();
-            if (g.ShowDialog() == DialogResult.OK)
+            if (normalBitmap != null)
+                usingTexture = checkBox3.Checked;
+            else
             {
-                lightColor.r = g.Color.R * 1f / 255;
-                lightColor.g = g.Color.G * 1f / 255;
-                lightColor.b = g.Color.B * 1f / 255;
-                button2.BackColor = g.Color;
-                drawingPanel.Invalidate();
+                checkBox3.Checked = false;
             }
         }
     }

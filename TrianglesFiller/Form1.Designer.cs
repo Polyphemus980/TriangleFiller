@@ -32,6 +32,8 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             groupBox3 = new GroupBox();
+            button3 = new Button();
+            button2 = new Button();
             checkBox2 = new CheckBox();
             button1 = new Button();
             checkBox1 = new CheckBox();
@@ -63,7 +65,7 @@
             mTrackBar = new TrackBar();
             ksTrackBar = new TrackBar();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            button2 = new Button();
+            checkBox3 = new CheckBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -124,6 +126,8 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(checkBox3);
+            groupBox3.Controls.Add(button3);
             groupBox3.Controls.Add(button2);
             groupBox3.Controls.Add(checkBox2);
             groupBox3.Controls.Add(button1);
@@ -142,10 +146,31 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Other";
             // 
+            // button3
+            // 
+            button3.Location = new Point(7, 137);
+            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(126, 31);
+            button3.TabIndex = 24;
+            button3.Text = "Load Texture";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(7, 61);
+            button2.Name = "button2";
+            button2.Size = new Size(147, 29);
+            button2.TabIndex = 23;
+            button2.Text = "Select light color";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(161, 99);
+            checkBox2.Location = new Point(157, 121);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(140, 24);
             checkBox2.TabIndex = 22;
@@ -155,9 +180,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(6, 121);
+            button1.Location = new Point(7, 96);
             button1.Name = "button1";
-            button1.Size = new Size(99, 35);
+            button1.Size = new Size(126, 35);
             button1.TabIndex = 21;
             button1.Text = "Load map";
             button1.UseVisualStyleBackColor = true;
@@ -168,7 +193,7 @@
             checkBox1.AutoSize = true;
             checkBox1.Checked = true;
             checkBox1.CheckState = CheckState.Checked;
-            checkBox1.Location = new Point(161, 69);
+            checkBox1.Location = new Point(157, 91);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(162, 24);
             checkBox1.TabIndex = 20;
@@ -180,7 +205,7 @@
             // 
             fillRadio.AutoSize = true;
             fillRadio.Checked = true;
-            fillRadio.Location = new Point(6, 91);
+            fillRadio.Location = new Point(155, 183);
             fillRadio.Name = "fillRadio";
             fillRadio.Size = new Size(139, 24);
             fillRadio.TabIndex = 19;
@@ -192,7 +217,7 @@
             // meshRadio
             // 
             meshRadio.AutoSize = true;
-            meshRadio.Location = new Point(6, 61);
+            meshRadio.Location = new Point(157, 152);
             meshRadio.Name = "meshRadio";
             meshRadio.Size = new Size(136, 24);
             meshRadio.TabIndex = 18;
@@ -203,7 +228,7 @@
             // sampleCountLabel
             // 
             sampleCountLabel.AutoSize = true;
-            sampleCountLabel.Location = new Point(286, 14);
+            sampleCountLabel.Location = new Point(277, 15);
             sampleCountLabel.Name = "sampleCountLabel";
             sampleCountLabel.Size = new Size(25, 20);
             sampleCountLabel.TabIndex = 17;
@@ -212,7 +237,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(161, 14);
+            label5.Location = new Point(160, 13);
             label5.Name = "label5";
             label5.Size = new Size(88, 20);
             label5.TabIndex = 15;
@@ -220,7 +245,7 @@
             // 
             // sampleSizeTrackBar
             // 
-            sampleSizeTrackBar.Location = new Point(161, 37);
+            sampleSizeTrackBar.Location = new Point(158, 36);
             sampleSizeTrackBar.Maximum = 200;
             sampleSizeTrackBar.Minimum = 5;
             sampleSizeTrackBar.Name = "sampleSizeTrackBar";
@@ -232,7 +257,7 @@
             // 
             // colorButton
             // 
-            colorButton.Location = new Point(6, 26);
+            colorButton.Location = new Point(6, 27);
             colorButton.Name = "colorButton";
             colorButton.Size = new Size(147, 29);
             colorButton.TabIndex = 2;
@@ -269,7 +294,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(132, 23);
+            label4.Location = new Point(133, 23);
             label4.Name = "label4";
             label4.Size = new Size(0, 20);
             label4.TabIndex = 5;
@@ -277,7 +302,7 @@
             // betaValueLabel
             // 
             betaValueLabel.AutoSize = true;
-            betaValueLabel.Location = new Point(292, 23);
+            betaValueLabel.Location = new Point(293, 23);
             betaValueLabel.Name = "betaValueLabel";
             betaValueLabel.Size = new Size(17, 20);
             betaValueLabel.TabIndex = 4;
@@ -303,7 +328,7 @@
             // 
             // betaTrackBar
             // 
-            betaTrackBar.Location = new Point(170, 46);
+            betaTrackBar.Location = new Point(170, 45);
             betaTrackBar.Name = "betaTrackBar";
             betaTrackBar.Size = new Size(150, 56);
             betaTrackBar.TabIndex = 1;
@@ -312,7 +337,7 @@
             // alphaTrackBar
             // 
             alphaTrackBar.LargeChange = 15;
-            alphaTrackBar.Location = new Point(0, 46);
+            alphaTrackBar.Location = new Point(0, 45);
             alphaTrackBar.Maximum = 45;
             alphaTrackBar.Minimum = -45;
             alphaTrackBar.Name = "alphaTrackBar";
@@ -347,7 +372,7 @@
             // ZValueLabel
             // 
             ZValueLabel.AutoSize = true;
-            ZValueLabel.Location = new Point(270, 110);
+            ZValueLabel.Location = new Point(270, 109);
             ZValueLabel.Name = "ZValueLabel";
             ZValueLabel.Size = new Size(33, 20);
             ZValueLabel.TabIndex = 16;
@@ -367,7 +392,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(181, 110);
+            label3.Location = new Point(181, 109);
             label3.Name = "label3";
             label3.Size = new Size(65, 20);
             label3.TabIndex = 14;
@@ -394,7 +419,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(6, 110);
+            label7.Location = new Point(6, 109);
             label7.Name = "label7";
             label7.Size = new Size(22, 20);
             label7.TabIndex = 10;
@@ -403,7 +428,7 @@
             // mValueLabel
             // 
             mValueLabel.AutoSize = true;
-            mValueLabel.Location = new Point(128, 110);
+            mValueLabel.Location = new Point(128, 109);
             mValueLabel.Name = "mValueLabel";
             mValueLabel.Size = new Size(25, 20);
             mValueLabel.TabIndex = 9;
@@ -461,15 +486,16 @@
             ksTrackBar.Value = 50;
             ksTrackBar.Scroll += ksTrackBar_Scroll;
             // 
-            // button2
+            // checkBox3
             // 
-            button2.Location = new Point(161, 129);
-            button2.Name = "button2";
-            button2.Size = new Size(140, 29);
-            button2.TabIndex = 23;
-            button2.Text = "Select light color";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            checkBox3.AutoSize = true;
+            checkBox3.Location = new Point(7, 183);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(103, 24);
+            checkBox3.TabIndex = 25;
+            checkBox3.Text = "use texture";
+            checkBox3.UseVisualStyleBackColor = true;
+            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
             // 
             // Form1
             // 
@@ -535,5 +561,7 @@
         private Button button1;
         private CheckBox checkBox2;
         private Button button2;
+        private Button button3;
+        private CheckBox checkBox3;
     }
 }

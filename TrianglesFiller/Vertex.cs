@@ -5,6 +5,7 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace TrianglesFiller
 {
     public class Vertex
@@ -23,12 +24,12 @@ namespace TrianglesFiller
 
         public Vector3 postRotationPosition { get; set; }
 
-        public Vertex(Vector3 position,Vector3 tangentU,Vector3 tangentV,float u,float v)
+        public Vertex(Vector3 position, Vector3 tangentU, Vector3 tangentV, float u, float v)
         {
             this.u = u;
             this.v = v;
             this.position = position;
-            normal = Vector3.Cross(tangentU,tangentV);
+            normal = Vector3.Cross(tangentU, tangentV);
             this.tangentU = tangentU;
             this.tangentV = tangentV;
             postRotationPosition = position;
@@ -36,7 +37,7 @@ namespace TrianglesFiller
             postRotationTangentU = tangentU;
             postRotationTangentV = tangentV;
         }
-        
+
         public void ApplyRotation(Matrix4x4 rotationMatrix)
         {
             postRotationPosition = Vector3.Transform(position, rotationMatrix);
@@ -47,19 +48,19 @@ namespace TrianglesFiller
     }
 }
 
-//-200 - 200 0
-//- 200 - 66.67 0
-//- 200 66.67 0
-//- 200 200 0
-//- 66.67 - 200 0
-//- 66.67 - 66.67 0
-//- 66.67 66.67 0
-//- 66.67 200 0
-//66.67 - 200 0
-//66.67 - 66.67 0
+//-200 -200 0
+//-200 -66.67 0
+//-200 66.67 0
+//-200 200 0
+//-66.67 -200 0
+//-66.67 -66.67 0
+//-66.67 66.67 0
+//-66.67 200 0
+//66.67 -200 0
+//66.67  -66.67 0
 //66.67 66.67 8.0
 //66.67 200 0
-//200 - 200 0
-//200 - 66.67 0
+//200 -200 0
+//200 -66.67 0
 //200 66.67 0
 //200 200 0

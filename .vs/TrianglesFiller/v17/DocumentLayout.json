@@ -3,36 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\trianglesfiller\\pointsfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\pointsfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\trianglesfiller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|c:\\users\\aleks\\source\\repos\\trianglesfiller\\trianglesfiller\\drawingfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\drawingfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\trianglesfiller\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|c:\\users\\aleks\\source\\repos\\trianglesfiller\\trianglesfiller\\points.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\points.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\trianglesfiller\\pointsfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\pointsfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\trianglesfiller\\drawingfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\drawingfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\trianglesfiller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\trianglesfiller\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\trianglesfiller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\trianglesfiller\\trackbarevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\trackbarevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\trianglesfiller\\vertex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\vertex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\trianglesfiller\\trianglesfiller.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\trianglesfiller.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\trianglesfiller\\points.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{5CC84719-45D7-48E4-B5EC-7E365B329868}|TrianglesFiller\\TrianglesFiller.csproj|solutionrelative:trianglesfiller\\points.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,39 +54,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Vertex.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Vertex.cs",
-              "RelativeDocumentMoniker": "TrianglesFiller\\Vertex.cs",
-              "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Vertex.cs",
-              "RelativeToolTip": "TrianglesFiller\\Vertex.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAA5wCIAAAAMAAAA",
+              "DocumentIndex": 3,
+              "Title": "PointsFunctions.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\PointsFunctions.cs",
+              "RelativeDocumentMoniker": "TrianglesFiller\\PointsFunctions.cs",
+              "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\PointsFunctions.cs",
+              "RelativeToolTip": "TrianglesFiller\\PointsFunctions.cs",
+              "ViewState": "AQIAAJkAAAAAAAAAAAAIwHoAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T10:12:16.095Z"
+              "WhenOpened": "2024-11-17T22:24:11.763Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TrackBarEvents.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\TrackBarEvents.cs",
-              "RelativeDocumentMoniker": "TrianglesFiller\\TrackBarEvents.cs",
-              "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\TrackBarEvents.cs",
-              "RelativeToolTip": "TrianglesFiller\\TrackBarEvents.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwEYAAAAqAAAA",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Form1.cs",
+              "RelativeDocumentMoniker": "TrianglesFiller\\Form1.cs",
+              "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Form1.cs",
+              "RelativeToolTip": "TrianglesFiller\\Form1.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAASwE4AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T10:01:18.821Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Points.txt",
-              "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Points.txt",
-              "RelativeDocumentMoniker": "TrianglesFiller\\Points.txt",
-              "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Points.txt",
-              "RelativeToolTip": "TrianglesFiller\\Points.txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-10-31T20:23:06.6Z",
+              "WhenOpened": "2024-11-16T22:27:30.358Z",
               "EditorCaption": ""
             },
             {
@@ -94,57 +86,81 @@
               "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Form1.cs [Design]",
               "RelativeToolTip": "TrianglesFiller\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T20:20:43.482Z"
+              "WhenOpened": "2024-11-16T22:23:37.991Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DrawingFunctions.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\DrawingFunctions.cs",
-              "RelativeDocumentMoniker": "TrianglesFiller\\DrawingFunctions.cs",
-              "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\DrawingFunctions.cs",
-              "RelativeToolTip": "TrianglesFiller\\DrawingFunctions.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAQwLkAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T20:14:55.031Z"
+              "DocumentIndex": 7,
+              "Title": "TrianglesFiller.csproj",
+              "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\TrianglesFiller.csproj",
+              "RelativeDocumentMoniker": "TrianglesFiller\\TrianglesFiller.csproj",
+              "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\TrianglesFiller.csproj",
+              "RelativeToolTip": "TrianglesFiller\\TrianglesFiller.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-16T22:23:29.292Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PointsFunctions.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\PointsFunctions.cs",
-              "RelativeDocumentMoniker": "TrianglesFiller\\PointsFunctions.cs",
-              "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\PointsFunctions.cs",
-              "RelativeToolTip": "TrianglesFiller\\PointsFunctions.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAgwGwAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T20:11:32.952Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Triangle.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Triangle.cs",
               "RelativeDocumentMoniker": "TrianglesFiller\\Triangle.cs",
               "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Triangle.cs",
               "RelativeToolTip": "TrianglesFiller\\Triangle.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAYwBUAAACwAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T20:05:55.017Z",
+              "WhenOpened": "2024-11-16T22:18:54.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Points.txt",
+              "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Points.txt",
+              "RelativeDocumentMoniker": "TrianglesFiller\\Points.txt",
+              "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Points.txt",
+              "RelativeToolTip": "TrianglesFiller\\Points.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-11-16T21:35:48.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Vertex.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Vertex.cs",
+              "RelativeDocumentMoniker": "TrianglesFiller\\Vertex.cs",
+              "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Vertex.cs",
+              "RelativeToolTip": "TrianglesFiller\\Vertex.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAA9wAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T21:35:17.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DrawingFunctions.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\DrawingFunctions.cs",
+              "RelativeDocumentMoniker": "TrianglesFiller\\DrawingFunctions.cs",
+              "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\DrawingFunctions.cs",
+              "RelativeToolTip": "TrianglesFiller\\DrawingFunctions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAPsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T19:57:43.338Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Form1.cs",
-              "RelativeDocumentMoniker": "TrianglesFiller\\Form1.cs",
-              "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Form1.cs",
-              "RelativeToolTip": "TrianglesFiller\\Form1.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAYwD8AAAAcAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Program.cs",
+              "RelativeDocumentMoniker": "TrianglesFiller\\Program.cs",
+              "ToolTip": "C:\\Users\\aleks\\source\\repos\\TrianglesFiller\\TrianglesFiller\\Program.cs",
+              "RelativeToolTip": "TrianglesFiller\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T20:03:27.483Z"
+              "WhenOpened": "2024-11-16T22:39:01.889Z"
             }
           ]
         }

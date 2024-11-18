@@ -1,11 +1,12 @@
-﻿using System.Numerics;
-using System.Globalization;
+﻿using System.Globalization;
+using System.Numerics;
 
 namespace TrianglesFiller
 {
-    public partial class Form1: Form
+    public partial class Form1 : Form
     {
         const int pointsLength = 4;
+
         public void RecalculatePoints()
         {
             points = new Vertex[sampleCount, sampleCount];
@@ -13,30 +14,13 @@ namespace TrianglesFiller
             RotateAxis();
             TriangulatePoints();
         }
+
         public Vertex GetPoint(float u, float v)
         {
-            //Vector3 point = new Vector3(0, 0, 0);
-            //Vector3 tangentU = new Vector3(0, 0, 0);
-            //Vector3 tangentV = new Vector3(0, 0, 0);
-            //for (int i = 0; i < pointsLength; i++)
-            //{
-            //    for (int j = 0; j < pointsLength; j++)
-            //    {
-            //        float BernsteinU = calculateBernstein(pointsLength - 1, i, u);
-            //        float BernsteinDerivativeU = calculateDerivativeBernstein(i, u);
-            //        float BernsteinDerivateV = calculateDerivativeBernstein(j, v);
-            //        float BernsteinV = calculateBernstein(pointsLength - 1, j, v);
-            //        point += BernsteinU * BernsteinV * loadedPoints[pointsLength * i + j];
-            //        tangentU += BernsteinDerivativeU * BernsteinV * loadedPoints[pointsLength * i + j];
-            //        tangentV += BernsteinDerivateV * BernsteinU * loadedPoints[pointsLength * i + j];
-            //    }
-            //}
-            //return new Vertex(point, Vector3.Normalize(4 * tangentU), Vector3.Normalize(4 * tangentV),u,v
             Vector3 point = new Vector3(0, 0, 0);
             Vector3 tangentU = new Vector3(0, 0, 0);
             Vector3 tangentV = new Vector3(0, 0, 0);
 
-            // Precompute Bernstein polynomials and derivatives for u and v
             float[] bernsteinU = new float[pointsLength];
             float[] bernsteinDerivativeU = new float[pointsLength];
             float[] bernsteinV = new float[pointsLength];
@@ -50,7 +34,6 @@ namespace TrianglesFiller
                 bernsteinDerivativeV[i] = calculateDerivativeBernstein(i, v);
             }
 
-            // Calculate point and tangents
             for (int i = 0; i < pointsLength; i++)
             {
                 for (int j = 0; j < pointsLength; j++)
@@ -62,15 +45,23 @@ namespace TrianglesFiller
                     tangentV += bernsteinDerivativeV[j] * bernsteinU[i] * loadedPoint;
                 }
             }
-
-            // Normalize and scale tangents before returning
-            return new Vertex(point, Vector3.Normalize(4 * tangentU), Vector3.Normalize(4 * tangentV), u, v);
+            return new Vertex(
+                point,
+                Vector3.Normalize(4 * tangentU),
+                Vector3.Normalize(4 * tangentV),
+                u,
+                v
+            );
         }
 
         private void RotateAxis()
         {
-            Matrix4x4 rotationXMatrix = Matrix4x4.CreateRotationX(beta * 1.0f / 180 * (float)Math.PI);
-            Matrix4x4 rotationZMatrix = Matrix4x4.CreateRotationZ(alpha * 1.0f / 180 * (float)Math.PI);
+            Matrix4x4 rotationXMatrix = Matrix4x4.CreateRotationX(
+                beta * 1.0f / 180 * (float)Math.PI
+            );
+            Matrix4x4 rotationZMatrix = Matrix4x4.CreateRotationZ(
+                alpha * 1.0f / 180 * (float)Math.PI
+            );
             Matrix4x4 rotationMatrix = rotationXMatrix * rotationZMatrix;
             for (int i = 0; i < sampleCount; i++)
             {
@@ -80,6 +71,7 @@ namespace TrianglesFiller
                 }
             }
         }
+
         private void TriangulatePoints()
         {
             triangles.Clear();
@@ -96,6 +88,7 @@ namespace TrianglesFiller
                 }
             }
         }
+
         private void SamplePoints()
         {
             for (int i = 0; i < sampleCount; i++)
@@ -111,46 +104,33 @@ namespace TrianglesFiller
 
         private float calculateBernstein(int top, int bottom, float t)
         {
-            return (float)(calculateBinomialCoefficient(top, bottom) * Math.Pow(t, bottom) * Math.Pow(1 - t, top - bottom));
+            return (float)(
+                calculateBinomialCoefficient(top, bottom)
+                * Math.Pow(t, bottom)
+                * Math.Pow(1 - t, top - bottom)
+            );
         }
 
         private int calculateBinomialCoefficient(int n, int k)
         {
-            //int[,] C = new int[n + 1, k + 1];
-            //int i, j;
-            //for (i = 0; i <= n; i++)
-            //{
-            //    for (j = 0; j <= Math.Min(i, k); j++)
-            //    {
-            //        if (j == 0 || j == i)
-            //            C[i, j] = 1;
-            //        else
-            //            C[i, j] = C[i - 1, j - 1] + C[i - 1, j];
-            //    }
-            //}
-            //return C[n, k];
-
-        int[][] binomialCoefficients =
-    {
-        new int[] {1},
-        new int[] {1, 1},
-        new int[] {1, 2, 1},
-        new int[] {1, 3, 3, 1}
-            };
-
+            int[][] binomialCoefficients = { [1], [1, 1], [1, 2, 1], [1, 3, 3, 1] };
             return binomialCoefficients[n][k];
-
         }
 
         private float calculateDerivativeBernstein(int index, float t)
         {
             switch (index)
             {
-                case 0: return -3 * (1 - t) * (1 - t);
-                case 1: return 3 * (1 - t) * (1 - 2 * t);
-                case 2: return 3 * t * (2 - 3 * t);
-                case 3: return 3 * t * t;
-                default: throw new Exception(message: "shouldnt be here");
+                case 0:
+                    return -3 * (1 - t) * (1 - t);
+                case 1:
+                    return 3 * (1 - t) * (1 - 2 * t);
+                case 2:
+                    return 3 * t * (2 - 3 * t);
+                case 3:
+                    return 3 * t * t;
+                default:
+                    throw new Exception(message: "shouldnt be here");
             }
         }
 
